@@ -1,0 +1,1 @@
+﻿Write-Host("This machine's IP address is {0}" -f $IP)
