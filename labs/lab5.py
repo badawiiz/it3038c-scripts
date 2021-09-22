@@ -8,11 +8,17 @@ print('Hello! Please guess a number between 1 and 10')
 
 guess = int(input())
 
-if guess < choice:
-    print ('Oh oh.. guess a bigger number')
+if guess == choice:
+	print ('You got it!! Nice work. The random number was  + str(int(choice)))
 
-elif guess > choice:
-    print ('Oh oh.. guess a smaller number')
-
-elif guess == choice:
-    print ('YOu got it!! Nice work')
+else:
+	for g in range(0,choice):
+		if guess < choice:
+			print ('Oh oh.. guess a bigger number')	
+			guess = int(input())
+			continue
+		elif guess > choice:
+			print ('Oh oh.. guess a smaller number')
+			guess = int(input())
+			continue
+print ('You got it!! Nice work. The random number was ' + str(int(choice)))
