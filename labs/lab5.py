@@ -11,7 +11,8 @@ guess = int(input())
 if guess > 10:
 	print('You must pick a number between 1 and 10')
 	guess = int(input())
-elif guess < 1:
+
+if guess < 1:
 	print('You must pick a number between 1 and 10')
 	guess = int(input())	
 
