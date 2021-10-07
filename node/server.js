@@ -1,7 +1,7 @@
 var http = require("http");
 var fs = require("fs");
 var os = require("os");
-var ip = require("ip");
+var ip = require('ip');
 
 http.createServer(function(req, res){
 
@@ -13,6 +13,24 @@ http.createServer(function(req, res){
 }
     else if(req.url.match("/sysinfo")) {
         myHostName=os.hostname();
+        
+        var upTimeInSeconds=process.uptime();
+        var upTimeInMinutes = upTimeInSeconds / 60;
+        var upTimeInHours = upTimeInMinutes / 60;
+        var upTimeInDays = upTimeInHours / 24;
+        upTimeInSeconds = Math.floor(upTimeInSeconds);
+        upTimeInMinutes = Math.floor(upTimeInMinutes);
+        upTimeInHours = Math.floor(upTimeInHours);
+        upTimeInDays = Math.floor(upTimeInDays);
+
+        totalMem = os.totalmem();
+        totalMemInMB = totalMem / 10000;
+
+        freeMem=os.freemem();
+        freeMemInMB = freeMem / 10000;
+
+        cpuNum = os.cpus().length;
+
         html=`    
         <!DOCTYPE html>
         <html>
@@ -22,10 +40,10 @@ http.createServer(function(req, res){
           <body>
             <p>Hostname: ${myHostName}</p>
             <p>IP: ${ip.address()}</p>
-            <p>Server Uptime: </p>
-            <p>Total Memory: </p>
-            <p>Free Memory: </p>
-            <p>Number of CPUs: </p>            
+            <p>Server Uptime: Days: ${upTimeInDays}, Hours: ${upTimeInHours}, Minutes: ${upTimeInMinutes}, Seconds: ${upTimeInSeconds}</p>
+            <p>Total Memory: ${totalMemInMB} MB</p>
+            <p>Free Memory: ${freeMemInMB} MB</p>
+            <p>Number of CPUs: ${cpuNum}</p>            
           </body>
         </html>` 
         res.writeHead(200, {"Content-Type": "text/html"});
