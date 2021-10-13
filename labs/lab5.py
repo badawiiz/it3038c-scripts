@@ -8,8 +8,16 @@ print('Hello! Please guess a number between 1 and 10')
 
 guess = int(input())
 
+if guess > 10:
+	print('You must pick a number between 1 and 10')
+	guess = int(input())
+
+if guess < 1:
+	print('You must pick a number between 1 and 10')
+	guess = int(input())	
+
 if guess == choice:
-	print ('You got it!! Nice work. The random number was  + str(int(choice)))
+	print ('You got it!! Nice work. The random number was'  + str(int(choice)))
 
 else:
 	for g in range(0,choice):
