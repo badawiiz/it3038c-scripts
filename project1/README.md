@@ -12,4 +12,6 @@ How to use:
 
 4- The application will ask you which type of research are you looking for, there are three different types: Events, Births, and Deaths.
 
-5- That's it! After you go through these four steps, a txt file will be created at the location you desired and the info will be printed on your screen as well. 
+5- The application will ask you to enter the day (1 - 31) and the month (1 - 12)
+
+6- That's it! After you go through these four steps, a txt file will be created at the location you desired and the info will be printed on your screen as well. 
