@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 print("Welcome! If you're wondering what happened on a specific day every year, you're in the right place!")
 
 # Ask user to enter the local path where the CSV file will be saved at
-user_local_path = input ('Enter the local path you would like the csv file to be saved at: ')
+user_local_path = input ('Enter the local path you would like the txt file to be saved at: ')
 
 # Ask user to enter the name of the file that is going to be created
 file_name = input ('Enter the name for the new file that is going to be created: ')
