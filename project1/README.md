@@ -14,4 +14,4 @@ How to use:
 
 5- The application will ask you to enter the day (1 - 31) and the month (1 - 12)
 
-6- That's it! After you go through these four steps, a txt file will be created at the location you desired and the info will be printed on your screen as well. 
+6- That's it! After you go through these five steps, a txt file will be created at the location you desired and the info will be printed on your screen as well. 
